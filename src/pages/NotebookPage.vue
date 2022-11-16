@@ -83,7 +83,7 @@ function onDeleteNote(item) {
     type: "positive",
     timeout: 2000,
     color: "primary",
-    message: "Nota enviada para a lixeira com sucesso!",
+    message: "Nota excluída com sucesso!",
     position: "bottom-right",
   });
 
@@ -124,6 +124,13 @@ function onDeleteSubject(index) {
   // notebook.value.subjects[index].inTrash = true;
   notebook.value?.subjects.splice(index, 1);
   note.value = null;
+  $q.notify({
+    type: "positive",
+    timeout: 2000,
+    color: "primary",
+    message: "Assunto excluído com sucesso!",
+    position: "bottom-right",
+  });
 }
 
 function renameNotebook() {
@@ -334,7 +341,7 @@ function removeNotebook() {
                             "
                           >
                             <q-item-section class="text-red-4">
-                              Mover assunto para a lixeira
+                              Excluír Assunto?
                             </q-item-section>
                           </q-item>
                         </q-list>
